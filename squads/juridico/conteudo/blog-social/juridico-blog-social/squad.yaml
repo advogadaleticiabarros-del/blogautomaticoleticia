@@ -1,0 +1,109 @@
+squad:
+  code: juridico-blog-social
+  setor: juridico
+  grupo: conteudo
+  sessao: blog-social
+  name: Blog Jurídico + Social
+  description: Pipeline completo que pesquisa temas jurídicos, escreve artigos otimizados para SEO e adapta o conteúdo para o Instagram — cobrindo Direito do Consumidor, Família, Trabalhista, Civil e Direito da Gestante CLT.
+  icon: scales
+  version: "1.0.0"
+
+  company: "_expxagents/_memory/company.md"
+  preferences: "_expxagents/_memory/preferences.md"
+  memory: "_memory/memories.md"
+
+  target_audience: "Pessoas físicas buscando orientação jurídica acessível; gestantes; trabalhadores; consumidores"
+  platform: blog + instagram
+  format: blog-post
+
+  schedule:
+    enabled: true
+
+  skills:
+    - web_search
+    - web_fetch
+
+  data: []
+
+  agents:
+    - id: pesquisadora
+      name: "Camila Sousa"
+      icon: magnifying-glass
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Camila"
+      prompt: agents/pesquisadora.md
+
+    - id: estrategista-seo
+      name: "Rodrigo Farias"
+      icon: chart-bar
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Rodrigo"
+      prompt: agents/estrategista-seo.md
+
+    - id: redatora
+      name: "Isabela Mendes"
+      icon: pencil
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Isabela"
+      prompt: agents/redatora.md
+
+    - id: revisora
+      name: "Mariana Costa"
+      icon: check-circle
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Mariana"
+      prompt: agents/revisora.md
+
+    - id: social-writer
+      name: "Priscila Vaz"
+      icon: instagram
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Priscila"
+      prompt: agents/social-writer.md
+
+    - id: validadora
+      name: "Fernanda Lopes"
+      icon: shield-check
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Fernanda"
+      prompt: agents/validadora.md
+
+  pipeline:
+    steps:
+      - id: step-01
+        agent: pesquisadora
+        label: "Pesquisar tema jurídico + palavras-chave SEO"
+        execution: inline
+
+      - id: step-02
+        agent: estrategista-seo
+        label: "Definir estratégia SEO e estrutura do artigo"
+        deliverFrom: pesquisadora
+        execution: inline
+
+      - id: step-03
+        agent: redatora
+        label: "Redigir artigo completo"
+        deliverFrom: estrategista-seo
+        execution: inline
+        produces_format: true
+
+      - id: step-04
+        agent: revisora
+        label: "Revisão jurídica e editorial"
+        deliverFrom: redatora
+        execution: inline
+
+      - id: checkpoint-01
+        type: checkpoint
+        label: "Aprovação do artigo revisado"
+        options:
+          - approve
+          - reject
+        on_reject: step-03
+
+      - id: step-05
+        agent: social-writer
+        label: "Adaptar para Instagram (feed + stories)"
+        deliverFrom: revisora
+        execution: inline
+
+      - id: step-06
+        agent: validadora
+        label: "Validação final SEO + conformidade"
+        deliverFrom: social-writer
+        execution: inline

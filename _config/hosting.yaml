@@ -1,0 +1,31 @@
+hosting:
+  modalidade: integrado
+  provider: github-pages
+  github_repo_url: https://github.com/advogadaleticiabarros-del/blogautomaticoleticia.git
+  blog_live_url: https://advogadaleticiabarros.com.br/blog/index.html
+  blog_local_path: blog/
+  logo_path: ../assets/logo/logo-sem-fundo.png
+  branch: master
+
+schedule:
+  frequency: 3x por semana
+  days: [segunda, quarta, sexta]
+  cadence: |
+    Segunda → Novo artigo (blog-escritor-seo-v2)
+    Quarta  → Novo artigo (blog-escritor-seo-v2)
+    Sexta   → Conteúdo Instagram dos artigos da semana (blog-para-social)
+
+blog:
+  base_url: https://advogadaleticiabarros.com.br/blog/
+  index_file: blog/index.html
+  articles_path: blog/
+  assets_path: ../assets/
+  template_article: squads/@softwarehouseexponencial/blog-escritor-seo-v2/templates/blog-article.html
+  template_home: squads/@softwarehouseexponencial/blog-escritor-seo-v2/templates/blog-home.html
+
+areas_juridicas:
+  - Trabalhista
+  - Previdenciário
+  - Família
+  - Consumidor
+  - Direito da Gestante CLT
