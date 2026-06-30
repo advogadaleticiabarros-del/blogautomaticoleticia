@@ -28,6 +28,7 @@ Recebe briefings aprovados (da squad `blog-para-social`) e produz criativos est�
 - Evitar fotos com TEXTO em inglês visível (ex.: formulários "Tax Withholding") — não casa com público BR. Trocar por cena neutra.
 - Overlay escuro resolve legibilidade na maioria das fotos; ainda assim evitar fotos muito claras/estouradas.
 - Renderizar PNG com `--virtual-time-budget=8000` para a imagem externa carregar antes do screenshot.
+- **Borda preta:** o `<body>` NÃO pode ter `padding` nem `background` escuro (gerava faixa preta no PNG). Body deve ser só `margin:0`. Renderizar com janela EXATA do criativo: `--window-size=1080,1350 --force-device-scale-factor=1` → PNG sai 1080×1350 limpo, sem moldura preta. (Conferir dimensão: bytes 16-24 do PNG.)
 
 ## Output
 
