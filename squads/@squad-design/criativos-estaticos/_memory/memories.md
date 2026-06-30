@@ -16,6 +16,18 @@ Recebe briefings aprovados (da squad `blog-para-social`) e produz criativos est�
 ## Template
 
 - `templates/criativo-4x5.html` (1080×1350, placeholders entre [COLCHETES])
+- Suporta IMAGEM DE FUNDO: `<img class="bg-image">` (opacity 0.42) + `.bg-overlay` (gradiente escuro) garantem legibilidade do texto. Para criativo só-tipografia, remover essas 2 tags.
+
+## Pipeline (2 passos)
+
+1. **Renata Vidal (curador-imagens)** — cura 1 imagem de fundo por criativo (Unsplash/assets), ou decide só-tipografia. Foto humanizada, lado limpo p/ texto, sem texto em inglês/watermark.
+2. **Helena Prado (designer-criativos)** — monta a arte 4:5 com a imagem curada e exporta PNG.
+
+## Curadoria — aprendizados
+
+- Evitar fotos com TEXTO em inglês visível (ex.: formulários "Tax Withholding") — não casa com público BR. Trocar por cena neutra.
+- Overlay escuro resolve legibilidade na maioria das fotos; ainda assim evitar fotos muito claras/estouradas.
+- Renderizar PNG com `--virtual-time-budget=8000` para a imagem externa carregar antes do screenshot.
 
 ## Output
 

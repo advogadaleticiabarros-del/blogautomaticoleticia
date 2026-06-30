@@ -32,6 +32,7 @@ Leia `squads/design-system/_memory/design-tokens.md` e `brand-guidelines.md` ant
 
 1. Receba o briefing (um arquivo `.md` ou o conteúdo direto). Identifique: HEADLINE, SUBHEADLINE, CTA, CATEGORIA (área do direito), NÍVEL ANDROMEDA, ÂNGULO.
 2. Copie o template `templates/criativo-4x5.html` e substitua os placeholders:
+   - `[IMAGEM_FUNDO]` → a URL da imagem curada pela Renata Vidal (curador-imagens). Se a curadoria devolver vazio (criativo só-tipografia), **remova** a tag `<img class="bg-image">` e o `<div class="bg-overlay">` para o fundo ficar limpo (gradiente escuro puro).
    - `[CATEGORIA]` → área do direito do artigo (Trabalhista, Previdenciário, Família, Consumidor).
    - `[KICKER]` → uma chamada curta de 1-3 palavras que combine com o ângulo (ex.: "Você sabia?", "Atenção", "Seus direitos"). Para criativos C1, prefira kicker de curiosidade; para C2/C3, kicker mais direto.
    - `[HEADLINE]` → a headline do briefing. Envolva 1-3 palavras-chave em `<em>...</em>` para destacá-las em dourado. Máx. ~8 palavras.

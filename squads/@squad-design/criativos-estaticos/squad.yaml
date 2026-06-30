@@ -33,6 +33,14 @@ squad:
       required: true
 
   agents:
+    - id: curador-imagens
+      name: "Renata Vidal"
+      icon: image
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Renata"
+      prompt: agents/curador-imagens.md
+      skills:
+        - web_fetch
+
     - id: designer-criativos
       name: "Helena Prado"
       icon: palette
@@ -44,6 +52,12 @@ squad:
   pipeline:
     steps:
       - id: step-01
+        agent: curador-imagens
+        label: "Curar imagem de fundo para cada criativo (ou decidir só-tipografia)"
+        execution: inline
+
+      - id: step-02
         agent: designer-criativos
-        label: "Produzir o criativo estático 4:5 em HTML a partir do briefing aprovado"
+        label: "Produzir o criativo estático 4:5 em HTML com a imagem curada"
+        deliverFrom: curador-imagens
         execution: inline

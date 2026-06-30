@@ -37,6 +37,26 @@
       color: var(--texto-claro);
     }
 
+    /* Imagem de fundo (opcional) + overlay para legibilidade.
+       Deixe o <img> vazio (src="") ou remova para criativo só-tipografia. */
+    .bg-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+      opacity: 0.42;
+    }
+    .bg-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(35,30,26,0.55) 0%, rgba(35,30,26,0.80) 55%, rgba(35,30,26,0.94) 100%);
+    }
+
     /* Moldura dourada sutil */
     .creative::before {
       content: '';
@@ -45,6 +65,7 @@
       border: 1px solid rgba(201,169,98,0.28);
       border-radius: 18px;
       pointer-events: none;
+      z-index: 3;
     }
 
     /* Topo: logo + categoria */
@@ -156,6 +177,10 @@
 </head>
 <body>
   <div class="creative">
+
+    <!-- Imagem de fundo curada (deixe src vazio para criativo só-tipografia) -->
+    <img class="bg-image" src="[IMAGEM_FUNDO]" alt="">
+    <div class="bg-overlay"></div>
 
     <div class="top">
       <div class="brand">
