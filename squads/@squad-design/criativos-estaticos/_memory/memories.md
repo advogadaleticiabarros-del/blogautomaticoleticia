@@ -8,10 +8,14 @@ Recebe briefings aprovados (da squad `blog-para-social`) e produz criativos est�
 ## Design system aplicado (resumo — fonte de verdade em squads/design-system/_memory/)
 
 - Tema ESCURO: fundo `#231E1A` / `#2E2720`
-- Destaque: dourado `#C9A962` | Texto: off-white `#F5F1EB` | CTA: WhatsApp `#25D366`
+- Destaque: gradiente DOURADO `linear-gradient(135deg,#E8D7A6,#C9A962,#A8863F)` (claro→base→escuro)
+- Texto: off-white `#F5F1EB`
+- **CTA: DOURADO** (gradiente dourado + texto escuro + sombra dourada + borda clara). NÃO usar verde WhatsApp no botão — a identidade do Instagram @adv.leticiabarros2 é dourado sobre escuro/sépia. Manter o ícone 💬 antes do texto do CTA.
+- Elementos dourados: kicker com filete dourado (`::before`), palavra-chave da headline em gradiente dourado (background-clip:text), categoria em gradiente dourado, moldura dourada mais presente (border rgba .55).
 - Fontes: Playfair Display (títulos) + Inter (corpo)
 - Rodapé fixo: @adv.leticiabarros2 + OAB/ES 39.948
 - NÃO: fundo vermelho, CTA genérico, promessa de resultado (regra OAB)
+- Referência visual: feed do Instagram da cliente — molduras douradas ornamentadas, selo dourado, tipografia dourada sobre fundo sépia/escuro.
 
 ## Template
 

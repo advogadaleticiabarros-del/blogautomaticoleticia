@@ -14,6 +14,9 @@
   <style>
     :root {
       --dourado:       #C9A962;
+      --dourado-claro: #E8D7A6;
+      --dourado-escuro:#A8863F;
+      --grad-dourado:  linear-gradient(135deg, #E8D7A6 0%, #C9A962 45%, #A8863F 100%);
       --fundo-escuro:  #231E1A;
       --fundo-alt:     #2E2720;
       --texto-claro:   #F5F1EB;
@@ -57,12 +60,12 @@
         linear-gradient(180deg, rgba(35,30,26,0.55) 0%, rgba(35,30,26,0.80) 55%, rgba(35,30,26,0.94) 100%);
     }
 
-    /* Moldura dourada sutil */
+    /* Moldura dourada (mais presente) */
     .creative::before {
       content: '';
       position: absolute;
       inset: 36px;
-      border: 1px solid rgba(201,169,98,0.28);
+      border: 1.5px solid rgba(201,169,98,0.55);
       border-radius: 18px;
       pointer-events: none;
       z-index: 3;
@@ -96,13 +99,14 @@
     }
     .cat {
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--fundo-escuro);
-      background: var(--dourado);
+      background: var(--grad-dourado);
       padding: 10px 22px;
       border-radius: 999px;
+      box-shadow: 0 4px 18px rgba(201,169,98,0.35);
     }
 
     /* Centro: headline + subheadline */
@@ -119,8 +123,21 @@
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--dourado);
+      color: var(--dourado-claro);
       margin-bottom: 28px;
+      padding-left: 22px;
+      position: relative;
+    }
+    /* filete dourado antes do kicker */
+    .kicker::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 3px;
+      background: var(--grad-dourado);
     }
     .headline {
       font-family: 'Playfair Display', serif;
@@ -132,6 +149,10 @@
     }
     .headline em {
       font-style: normal;
+      background: var(--grad-dourado);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
       color: var(--dourado);
     }
     .subheadline {
@@ -154,12 +175,14 @@
       display: inline-flex;
       align-items: center;
       gap: 14px;
-      background: var(--whatsapp);
-      color: #fff;
+      background: var(--grad-dourado);
+      color: var(--fundo-escuro);
       font-size: 28px;
       font-weight: 700;
-      padding: 22px 40px;
+      padding: 22px 42px;
       border-radius: 999px;
+      box-shadow: 0 6px 24px rgba(201,169,98,0.40);
+      border: 1px solid rgba(232,215,166,0.6);
     }
     .handle {
       font-size: 24px;
