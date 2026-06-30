@@ -81,6 +81,18 @@
     }
     .brand {
       display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .brand__logo {
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.45));
+      flex-shrink: 0;
+    }
+    .brand__text {
+      display: flex;
       flex-direction: column;
       line-height: 1.1;
     }
@@ -207,8 +219,11 @@
 
     <div class="top">
       <div class="brand">
-        <span class="name">Letícia Barros</span>
-        <span class="sub">Advocacia &amp; Consultoria</span>
+        <img class="brand__logo" src="[LOGO_SRC]" alt="Letícia Barros">
+        <div class="brand__text">
+          <span class="name">Letícia Barros</span>
+          <span class="sub">Advocacia &amp; Consultoria</span>
+        </div>
       </div>
       <span class="cat">[CATEGORIA]</span>
     </div>

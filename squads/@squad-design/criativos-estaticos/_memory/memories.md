@@ -13,6 +13,7 @@ Recebe briefings aprovados (da squad `blog-para-social`) e produz criativos est�
 - **CTA: DOURADO** (gradiente dourado + texto escuro + sombra dourada + borda clara). NÃO usar verde WhatsApp no botão — a identidade do Instagram @adv.leticiabarros2 é dourado sobre escuro/sépia. Manter o ícone 💬 antes do texto do CTA.
 - Elementos dourados: kicker com filete dourado (`::before`), palavra-chave da headline em gradiente dourado (background-clip:text), categoria em gradiente dourado, moldura dourada mais presente (border rgba .55).
 - Fontes: Playfair Display (títulos) + Inter (corpo)
+- **LOGOTIPO:** emblema dourado (balança da justiça + monograma LB, fundo transparente) em `assets/logo-lb.png`. SEMPRE no topo, à esquerda do nome "Letícia Barros / Advocacia & Consultoria". Referenciar por `file:///` (caminho absoluto) e renderizar com `--allow-file-access-from-files`. Fonte original: C:\Users\prosy\Desktop\modelo-visual-site\assets\logo\logo-sem-fundo.png.
 - Rodapé fixo: @adv.leticiabarros2 + OAB/ES 39.948
 - NÃO: fundo vermelho, CTA genérico, promessa de resultado (regra OAB)
 - Referência visual: feed do Instagram da cliente — molduras douradas ornamentadas, selo dourado, tipografia dourada sobre fundo sépia/escuro.
