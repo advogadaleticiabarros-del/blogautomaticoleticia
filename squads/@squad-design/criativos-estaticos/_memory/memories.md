@@ -28,3 +28,12 @@ Recebe briefings aprovados (da squad `blog-para-social`) e produz criativos est�
 
 ## Histórico de execuções
 _(Atualizado após cada lote)_
+
+- **30/06/2026** — Lote do artigo "Rescisão indireta" (Trabalhista). 5 criativos 4:5 (HTML+PNG) em `outputs/Junho_2026/`. Distribuição Andromeda 2×C1 + 2×C2 + 1×C3:
+  1. C1 Educativo — "Pedir demissão pode te custar caro" (Salva esse post)
+  2. C1 Quebra argumentativa — "Dá pra sair do emprego sem perder seus direitos" (Salva pra não esquecer)
+  3. C2 Demonstrativo — "A rescisão indireta paga tudo isso a você" (Veja se é o seu caso)
+  4. C2 Comparativo — "Demissão ou rescisão indireta?" (Entenda seu caso)
+  5. C3 Quebra de objeção/prova — "Mas como eu provo que a empresa errou?" (Fale no WhatsApp)
+  - PNG renderizado via Chrome headless (`--window-size=1120,1390 --screenshot`). Todos passaram na revisão visual (texto dentro da moldura, hierarquia ok, dourado nas keywords).
+  - Aprendizado: headlines de até ~6 palavras cabem em 2 linhas no font-size padrão (86px). Acima disso, encostam na moldura — reduzir fonte. Briefings vieram de mim (Claude), não da blog-para-social.
