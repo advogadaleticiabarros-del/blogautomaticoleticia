@@ -16,6 +16,7 @@
 | quanto-tempo-processar-apos-demissao | Prazo para processar após demissão | Trabalhista |
 | nome-negativado-indevidamente-o-que-fazer | Negativação indevida no Serasa | Consumidor |
 | rescisao-indireta-o-que-e-quando-tenho-direito | Rescisão indireta (art. 483 CLT) | Trabalhista |
+| rescisao-indireta-riscos-vale-a-pena | Riscos da rescisão indireta (sincero) | Trabalhista |
 | carga-horaria-maxima-clt | Carga horária máxima CLT | Trabalhista |
 | fgts-trabalhador-temporario-direitos-e-como-cobrar | FGTS do trabalhador temporário | Trabalhista |
 | aborto-espontaneo-direitos-da-trabalhadora-clt | Aborto espontâneo e direitos | Trabalhista |
