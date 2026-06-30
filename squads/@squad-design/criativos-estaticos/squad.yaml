@@ -1,0 +1,49 @@
+squad:
+  code: criativos-estaticos
+  scope: squad-design
+  setor: marketing
+  grupo: design
+  sessao: criativos
+  name: Criativos Estáticos
+  description: "Recebe briefings aprovados (headline, subheadline, CTA, nível Andromeda) e produz criativos estáticos 4:5 para feed do Instagram em HTML, alinhados ao design system e às brand guidelines do cliente. Cada briefing vira uma arte pronta para exportar como PNG."
+  icon: image
+  version: "1.0.0"
+
+  company: "_expxagents/_memory/company.md"
+  preferences: "_expxagents/_memory/preferences.md"
+  memory: "_memory/memories.md"
+
+  design_system: "squads/design-system/_memory/design-tokens.md"
+  brand_guidelines: "squads/design-system/_memory/brand-guidelines.md"
+
+  target_audience: defined in _expxagents/_memory/company.md
+  platform: instagram-feed
+  format: criativo-estatico-4x5
+
+  schedule:
+    enabled: false
+
+  skills:
+    - file_management
+
+  data:
+    - key: briefing_path
+      label: "Caminho do briefing"
+      description: "Arquivo .md com o briefing aprovado (headline, subheadline, CTA, nível Andromeda, ângulo, insight, referência). Aceita um único briefing ou um diretório com vários."
+      required: true
+
+  agents:
+    - id: designer-criativos
+      name: "Helena Prado"
+      icon: palette
+      avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Helena"
+      prompt: agents/designer-criativos.md
+      skills:
+        - file_management
+
+  pipeline:
+    steps:
+      - id: step-01
+        agent: designer-criativos
+        label: "Produzir o criativo estático 4:5 em HTML a partir do briefing aprovado"
+        execution: inline

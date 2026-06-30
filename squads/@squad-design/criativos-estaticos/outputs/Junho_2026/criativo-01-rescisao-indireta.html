@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <!--
+    TEMPLATE DE CRIATIVO ESTÁTICO 4:5 — Letícia Barros Advocacia
+    Formato Instagram feed: 1080 x 1350 px.
+    Para exportar como PNG: abrir no navegador e dar print/screenshot do .creative,
+    ou usar uma ferramenta headless (ex.: a um viewport 1080x1350).
+    Substituir os placeholders [ENTRE_COLCHETES].
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dourado:       #C9A962;
+      --fundo-escuro:  #231E1A;
+      --fundo-alt:     #2E2720;
+      --texto-claro:   #F5F1EB;
+      --whatsapp:      #25D366;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #111; display: flex; justify-content: center; padding: 20px; }
+
+    .creative {
+      width: 1080px;
+      height: 1350px;
+      background:
+        radial-gradient(circle at 80% 12%, rgba(201,169,98,0.16), transparent 42%),
+        linear-gradient(160deg, var(--fundo-escuro) 0%, var(--fundo-alt) 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 96px 88px;
+      font-family: 'Inter', sans-serif;
+      color: var(--texto-claro);
+    }
+
+    /* Moldura dourada sutil */
+    .creative::before {
+      content: '';
+      position: absolute;
+      inset: 36px;
+      border: 1px solid rgba(201,169,98,0.28);
+      border-radius: 18px;
+      pointer-events: none;
+    }
+
+    /* Topo: logo + categoria */
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .brand .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--texto-claro);
+    }
+    .brand .sub {
+      font-size: 15px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-top: 4px;
+    }
+    .cat {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--fundo-escuro);
+      background: var(--dourado);
+      padding: 10px 22px;
+      border-radius: 999px;
+    }
+
+    /* Centro: headline + subheadline */
+    .center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+    .kicker {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-bottom: 28px;
+    }
+    .headline {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 86px;
+      line-height: 1.06;
+      color: var(--texto-claro);
+      margin-bottom: 36px;
+    }
+    .headline em {
+      font-style: normal;
+      color: var(--dourado);
+    }
+    .subheadline {
+      font-size: 34px;
+      font-weight: 400;
+      line-height: 1.45;
+      color: rgba(245,241,235,0.82);
+      max-width: 88%;
+    }
+
+    /* Rodapé: CTA + handle */
+    .bottom {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--whatsapp);
+      color: #fff;
+      font-size: 28px;
+      font-weight: 700;
+      padding: 22px 40px;
+      border-radius: 999px;
+    }
+    .handle {
+      font-size: 24px;
+      font-weight: 600;
+      color: rgba(245,241,235,0.65);
+      text-align: right;
+    }
+    .handle .oab {
+      display: block;
+      font-size: 18px;
+      color: var(--dourado);
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="creative">
+
+    <div class="top">
+      <div class="brand">
+        <span class="name">Letícia Barros</span>
+        <span class="sub">Advocacia &amp; Consultoria</span>
+      </div>
+      <span class="cat">Trabalhista</span>
+    </div>
+
+    <div class="center">
+      <span class="kicker">Você sabia?</span>
+      <h1 class="headline">A empresa errou? Você pode sair recebendo <em>tudo</em>.</h1>
+      <p class="subheadline">Salário atrasado ou FGTS sem depósito podem dar direito à rescisão indireta — como uma demissão sem justa causa.</p>
+    </div>
+
+    <div class="bottom">
+      <span class="cta">💬 Falar no WhatsApp</span>
+      <span class="handle">
+        @adv.leticiabarros2
+        <span class="oab">OAB/ES 39.948</span>
+      </span>
+    </div>
+
+  </div>
+</body>
+</html>
