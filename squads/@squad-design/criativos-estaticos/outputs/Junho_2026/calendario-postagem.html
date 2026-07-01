@@ -13,72 +13,77 @@
     --escuro:#231E1A; --alt:#2E2720; --claro:#F5F1EB; --wpp:#25D366;
   }
   *{margin:0;padding:0;box-sizing:border-box}
+  html{font-size:18px}
   body{
     font-family:'Inter',sans-serif; color:var(--claro);
     background:
-      radial-gradient(circle at 85% 8%, rgba(201,169,98,.14), transparent 40%),
+      radial-gradient(circle at 85% 4%, rgba(201,169,98,.14), transparent 38%),
       linear-gradient(160deg,var(--escuro),var(--alt));
-    min-height:100vh; padding:56px 24px 80px;
+    min-height:100vh; padding:60px 28px 100px;
   }
-  .wrap{max-width:1080px;margin:0 auto}
+  .wrap{max-width:1240px;margin:0 auto}
 
   /* Cabeçalho */
-  header{text-align:center;margin-bottom:14px}
+  header{text-align:center;margin-bottom:18px}
   .badge{
     display:inline-block;background:var(--grad);color:var(--escuro);
-    font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-    padding:7px 18px;border-radius:999px;margin-bottom:20px;
+    font-size:.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    padding:9px 22px;border-radius:999px;margin-bottom:24px;
     box-shadow:0 4px 18px rgba(201,169,98,.35);
   }
-  h1{font-family:'Playfair Display',serif;font-weight:900;font-size:2.6rem;line-height:1.1;margin-bottom:12px}
+  h1{font-family:'Playfair Display',serif;font-weight:900;font-size:3.4rem;line-height:1.08;margin-bottom:16px}
   h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .sub{color:rgba(245,241,235,.7);font-size:1.02rem;max-width:640px;margin:0 auto 8px;line-height:1.6}
-  .meta{color:var(--dourado-claro);font-size:.85rem;letter-spacing:1px;text-transform:uppercase;margin-top:10px}
-  .rule{height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,98,.5),transparent);margin:34px 0}
-
-  /* Legenda das colunas */
-  .legend{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:30px;font-size:.86rem}
-  .legend span{display:inline-flex;align-items:center;gap:8px;color:rgba(245,241,235,.75)}
-  .dot{width:11px;height:11px;border-radius:50%}
-  .dot.op{background:var(--dourado)}
-  .dot.ca{background:#8a8079}
+  .sub{color:rgba(245,241,235,.72);font-size:1.15rem;max-width:760px;margin:0 auto 10px;line-height:1.65}
+  .meta{color:var(--dourado-claro);font-size:1rem;letter-spacing:1px;text-transform:uppercase;margin-top:14px;font-weight:600}
+  .legend{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin:26px 0 10px;font-size:1rem}
+  .legend span{display:inline-flex;align-items:center;gap:9px;color:rgba(245,241,235,.8)}
+  .dot{width:14px;height:14px;border-radius:50%}
+  .dot.op{background:var(--dourado)} .dot.ca{background:#8a8079}
+  .rule{height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,98,.5),transparent);margin:40px 0}
 
   /* Dia */
-  .day{
+  .day{margin-bottom:40px}
+  .day__head{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding-bottom:14px;border-bottom:2px solid rgba(201,169,98,.25)}
+  .day__num{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--dourado);font-weight:900;line-height:1}
+  .day__dow{font-size:1.05rem;letter-spacing:3px;text-transform:uppercase;color:rgba(245,241,235,.7);font-weight:600}
+  .day--sun .tag-conv{margin-left:auto;background:rgba(37,211,102,.15);color:#5fe89a;border:1px solid rgba(37,211,102,.45);font-size:.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:999px}
+
+  /* Post card grande */
+  .post{
+    display:grid;grid-template-columns:280px 1fr;gap:28px;align-items:start;
     background:rgba(46,39,32,.55);border:1px solid rgba(201,169,98,.18);
-    border-radius:16px;padding:22px 24px;margin-bottom:22px;
+    border-radius:18px;padding:24px;margin-bottom:20px;
   }
-  .day__head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
-  .day__num{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--dourado);font-weight:700}
-  .day__dow{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:rgba(245,241,235,.55)}
-  .day--sun .day__num{color:var(--dourado-claro)}
-  .day--sun .tag-conv{
-    margin-left:auto;background:rgba(37,211,102,.15);color:#4be48a;border:1px solid rgba(37,211,102,.4);
-    font-size:.66rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:999px;
+  @media(max-width:840px){.post{grid-template-columns:1fr}}
+  .post__thumb{width:100%;border-radius:12px;border:1px solid rgba(201,169,98,.3);display:block;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+
+  .post__meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+  .time{display:inline-flex;align-items:center;gap:7px;font-size:1rem;font-weight:700;letter-spacing:.5px;color:var(--escuro);background:var(--grad);padding:6px 16px;border-radius:999px}
+  .lvl{font-size:.8rem;font-weight:700;letter-spacing:1.5px;color:var(--dourado);text-transform:uppercase;border:1px solid rgba(201,169,98,.4);padding:4px 10px;border-radius:6px}
+  .cta-pill{font-size:.85rem;color:rgba(245,241,235,.7)}
+  .cta-pill b{color:var(--dourado-claro)}
+  .cta-pill.wpp b{color:var(--wpp)}
+  .post__title{font-family:'Playfair Display',serif;font-size:1.6rem;line-height:1.25;margin-bottom:6px}
+  .file{font-size:.82rem;color:rgba(245,241,235,.45);font-family:monospace;margin-bottom:16px}
+
+  /* Legenda */
+  .cap-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+  .cap-label{font-size:.8rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dourado)}
+  .copy-btn{
+    font-family:'Inter',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;
+    background:var(--grad);color:var(--escuro);border:none;padding:9px 20px;border-radius:999px;
+    box-shadow:0 3px 12px rgba(201,169,98,.35);transition:.2s;
   }
+  .copy-btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+  .copy-btn.done{background:var(--wpp);color:#fff}
+  .cap{
+    background:rgba(35,30,26,.6);border:1px solid rgba(201,169,98,.15);border-radius:12px;
+    padding:18px 20px;font-size:1.02rem;line-height:1.75;color:rgba(245,241,235,.9);
+    white-space:pre-wrap;
+  }
+  .cap .tags{color:var(--dourado-claro);display:block;margin-top:12px;font-size:.95rem}
 
-  .slots{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  @media(max-width:720px){.slots{grid-template-columns:1fr}}
-
-  .post{display:flex;gap:16px;align-items:center;background:rgba(35,30,26,.5);border:1px solid rgba(201,169,98,.12);border-radius:12px;padding:12px;transition:.25s}
-  .post:hover{border-color:rgba(201,169,98,.4);transform:translateY(-2px)}
-  .post img{width:84px;height:105px;object-fit:cover;border-radius:8px;flex-shrink:0;border:1px solid rgba(201,169,98,.25)}
-  .post__body{min-width:0}
-  .post__time{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:1px;color:var(--escuro);background:var(--grad);padding:3px 10px;border-radius:999px;margin-bottom:8px}
-  .post__lvl{font-size:.66rem;font-weight:700;letter-spacing:1px;color:var(--dourado);text-transform:uppercase;margin-left:6px}
-  .post__title{font-family:'Playfair Display',serif;font-size:1.02rem;line-height:1.25;margin-bottom:6px}
-  .post__cta{font-size:.78rem;color:rgba(245,241,235,.6)}
-  .post__cta b{color:var(--wpp);font-weight:600}
-
-  /* Resumo */
-  .summary{background:rgba(46,39,32,.55);border:1px solid rgba(201,169,98,.18);border-radius:16px;padding:24px 26px;margin-top:6px}
-  .summary h2{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--dourado);margin-bottom:16px}
-  table{width:100%;border-collapse:collapse;font-size:.88rem}
-  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid rgba(201,169,98,.1)}
-  th{color:var(--dourado);font-size:.72rem;letter-spacing:1px;text-transform:uppercase}
-  td{color:rgba(245,241,235,.82)}
-  tr:last-child td{border-bottom:none}
-  .foot{text-align:center;color:rgba(245,241,235,.4);font-size:.8rem;margin-top:30px;line-height:1.7}
+  .foot{text-align:center;color:rgba(245,241,235,.45);font-size:.95rem;margin-top:20px;line-height:1.8}
   .foot b{color:var(--dourado-claro)}
 </style>
 </head>
@@ -90,150 +95,244 @@
     <h1>Semana de <span>Rescisão Indireta</span></h1>
     <p class="sub">10 posts · 2 por dia · @adv.leticiabarros2. O post do meio-dia traz o lado dos direitos; o da noite traz a cautela. A semana aquece a audiência e fecha convertendo no WhatsApp.</p>
     <p class="meta">01 a 05 de julho de 2026 · 12h e 19h</p>
+    <div class="legend">
+      <span><i class="dot op"></i> 12h — Oportunidade (você tem direito)</span>
+      <span><i class="dot ca"></i> 19h — Cautela (mas jogue limpo)</span>
+    </div>
   </header>
-
-  <div class="legend">
-    <span><i class="dot op"></i> 12h — Oportunidade (você tem direito)</span>
-    <span><i class="dot ca"></i> 19h — Cautela (mas jogue limpo)</span>
-  </div>
-
-  <!-- QUARTA -->
-  <div class="day">
-    <div class="day__head"><span class="day__num">01</span><span class="day__dow">Quarta-feira</span></div>
-    <div class="slots">
-      <div class="post">
-        <img src="criativo-01-pedir-demissao-custa-caro.png" alt="">
-        <div class="post__body">
-          <span class="post__time">🕛 12h</span><span class="post__lvl">C1</span>
-          <div class="post__title">Pedir demissão pode te custar caro</div>
-          <div class="post__cta">CTA: Salva esse post</div>
-        </div>
-      </div>
-      <div class="post">
-        <img src="rescisao-indireta-riscos/criativo-01-nao-e-por-qualquer-motivo.png" alt="">
-        <div class="post__body">
-          <span class="post__time">🕖 19h</span><span class="post__lvl">C1</span>
-          <div class="post__title">Rescisão indireta não é por qualquer motivo</div>
-          <div class="post__cta">CTA: Salva esse post</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- QUINTA -->
-  <div class="day">
-    <div class="day__head"><span class="day__num">02</span><span class="day__dow">Quinta-feira</span></div>
-    <div class="slots">
-      <div class="post">
-        <img src="criativo-02-sair-sem-perder-direitos.png" alt="">
-        <div class="post__body">
-          <span class="post__time">🕛 12h</span><span class="post__lvl">C1</span>
-          <div class="post__title">Dá pra sair do emprego sem perder seus direitos</div>
-          <div class="post__cta">CTA: Salva pra não esquecer</div>
-        </div>
-      </div>
-      <div class="post">
-        <img src="rescisao-indireta-riscos/criativo-02-a-prova-e-sua.png" alt="">
-        <div class="post__body">
-          <span class="post__time">🕖 19h</span><span class="post__lvl">C1</span>
-          <div class="post__title">Numa ação dessas, a prova é sua</div>
-          <div class="post__cta">CTA: Salva pra não esquecer</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SEXTA -->
-  <div class="day">
-    <div class="day__head"><span class="day__num">03</span><span class="day__dow">Sexta-feira</span></div>
-    <div class="slots">
-      <div class="post">
-        <img src="criativo-03-rescisao-paga-tudo.png" alt="">
-        <div class="post__body">
-          <span class="post__time">🕛 12h</span><span class="post__lvl">C2</span>
-          <div class="post__title">A rescisão indireta paga tudo isso a você</div>
-          <div class="post__cta">CTA: Veja se é o seu caso</div>
-        </div>
-      </div>
-      <div class="post">
-        <img src="rescisao-indireta-riscos/criativo-03-sair-errado.png" alt="">
-        <div class="post__body">
-          <span class="post__time">🕖 19h</span><span class="post__lvl">C2</span>
-          <div class="post__title">Sair errado pode virar pedido de demissão</div>
-          <div class="post__cta">CTA: Veja como evitar</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SÁBADO -->
-  <div class="day">
-    <div class="day__head"><span class="day__num">04</span><span class="day__dow">Sábado</span></div>
-    <div class="slots">
-      <div class="post">
-        <img src="criativo-04-demissao-x-rescisao.png" alt="">
-        <div class="post__body">
-          <span class="post__time">🕛 12h</span><span class="post__lvl">C2</span>
-          <div class="post__title">Demissão ou rescisão indireta?</div>
-          <div class="post__cta">CTA: Entenda seu caso</div>
-        </div>
-      </div>
-      <div class="post">
-        <img src="rescisao-indireta-riscos/criativo-04-quando-e-forte.png" alt="">
-        <div class="post__body">
-          <span class="post__time">🕖 19h</span><span class="post__lvl">C2</span>
-          <div class="post__title">Quando a rescisão indireta é forte</div>
-          <div class="post__cta">CTA: Avalie seu caso</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- DOMINGO -->
-  <div class="day day--sun">
-    <div class="day__head"><span class="day__num">05</span><span class="day__dow">Domingo</span><span class="tag-conv">Dia de conversão</span></div>
-    <div class="slots">
-      <div class="post">
-        <img src="criativo-05-como-provar.png" alt="">
-        <div class="post__body">
-          <span class="post__time">🕛 12h</span><span class="post__lvl">C3</span>
-          <div class="post__title">Mas como eu provo que a empresa errou?</div>
-          <div class="post__cta">CTA: <b>Fale no WhatsApp</b></div>
-        </div>
-      </div>
-      <div class="post">
-        <img src="rescisao-indireta-riscos/criativo-05-antes-de-largar.png" alt="">
-        <div class="post__body">
-          <span class="post__time">🕖 19h</span><span class="post__lvl">C3</span>
-          <div class="post__title">Antes de largar o emprego, leia isto</div>
-          <div class="post__cta">CTA: <b>Fale no WhatsApp</b></div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="rule"></div>
 
-  <div class="summary">
-    <h2>Visão da semana</h2>
-    <table>
-      <thead><tr><th>Dia</th><th>12h · Oportunidade</th><th>19h · Cautela</th></tr></thead>
-      <tbody>
-        <tr><td>Qua 01</td><td>C1 · demissão custa caro</td><td>C1 · não é por qualquer motivo</td></tr>
-        <tr><td>Qui 02</td><td>C1 · sair sem perder direitos</td><td>C1 · a prova é sua</td></tr>
-        <tr><td>Sex 03</td><td>C2 · paga tudo isso</td><td>C2 · sair errado</td></tr>
-        <tr><td>Sáb 04</td><td>C2 · demissão x rescisão</td><td>C2 · quando é forte</td></tr>
-        <tr><td>Dom 05</td><td>C3 · como provar</td><td>C3 · antes de largar</td></tr>
-      </tbody>
-    </table>
+  <!-- ===== QUARTA 01 ===== -->
+  <div class="day">
+    <div class="day__head"><span class="day__num">01</span><span class="day__dow">Quarta-feira</span></div>
+
+    <div class="post">
+      <img class="post__thumb" src="criativo-01-pedir-demissao-custa-caro.png" alt="">
+      <div>
+        <div class="post__meta"><span class="time">🕛 12h</span><span class="lvl">C1</span><span class="cta-pill">CTA: <b>Salva esse post</b></span></div>
+        <div class="post__title">Pedir demissão pode te custar caro</div>
+        <div class="file">criativo-01-pedir-demissao-custa-caro.png</div>
+        <div class="cap-head"><span class="cap-label">Legenda</span><button class="copy-btn" onclick="cp(this)">Copiar legenda</button></div>
+        <div class="cap">Tem gente aguentando salário atrasado, FGTS sem depósito e um clima pesado no trabalho só porque acredita que pedir demissão é a única saída. E aí engole tudo com medo de sair perdendo.
+
+O que pouca gente sabe é que existe uma diferença enorme entre pedir demissão e sair por culpa da empresa. Quem pede demissão abre mão do saque do FGTS, da multa de 40% e do seguro-desemprego. Sai de mãos quase vazias depois de anos de trabalho.
+
+Quando o problema é a empresa que descumpre a lei, a história muda de figura. Existe um caminho previsto justamente para essa situação, em que você sai recebendo o que seria devido numa demissão sem justa causa.
+
+Antes de tomar qualquer decisão no impulso, vale entender exatamente onde você está pisando. Salva esse post para não esquecer e acompanha os próximos, que eu vou explicar como isso funciona na prática.
+<span class="tags">#direitotrabalhista #rescisaoindireta #fgts #segurodesemprego #advogadatrabalhista #vitoriaes #direitosdotrabalhador</span></div>
+      </div>
+    </div>
+
+    <div class="post">
+      <img class="post__thumb" src="rescisao-indireta-riscos/criativo-01-nao-e-por-qualquer-motivo.png" alt="">
+      <div>
+        <div class="post__meta"><span class="time">🕖 19h</span><span class="lvl">C1</span><span class="cta-pill">CTA: <b>Salva esse post</b></span></div>
+        <div class="post__title">Rescisão indireta não é por qualquer motivo</div>
+        <div class="file">rescisao-indireta-riscos/criativo-01-nao-e-por-qualquer-motivo.png</div>
+        <div class="cap-head"><span class="cap-label">Legenda</span><button class="copy-btn" onclick="cp(this)">Copiar legenda</button></div>
+        <div class="cap">Existe muito conteúdo por aí fazendo parecer que rescisão indireta é só entrar com a ação e sair recebendo tudo. Eu prefiro te contar a verdade, mesmo que ela não seja a mais animadora.
+
+A rescisão indireta existe para situações em que a empresa comete uma falta realmente séria, prevista no artigo 483 da CLT. Salário atrasado de forma reiterada, FGTS que deixou de ser depositado por meses, assédio comprovado, condições degradantes. Coisas com peso e continuidade.
+
+Uma discussão pontual, uma bronca isolada ou um único atraso, sozinhos, raramente são suficientes. A Justiça avalia se a conduta foi grave o bastante para tornar impossível continuar no emprego. Entender isso antes evita uma decisão que pode sair cara.
+
+Saber onde você pisa é o primeiro passo para se proteger. Salva esse post e, se quiser entender o seu caso com franqueza, me chama.
+<span class="tags">#rescisaoindireta #direitotrabalhista #clt #advogadatrabalhista #vitoriaes #direitosdotrabalhador #informacaojuridica</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== QUINTA 02 ===== -->
+  <div class="day">
+    <div class="day__head"><span class="day__num">02</span><span class="day__dow">Quinta-feira</span></div>
+
+    <div class="post">
+      <img class="post__thumb" src="criativo-02-sair-sem-perder-direitos.png" alt="">
+      <div>
+        <div class="post__meta"><span class="time">🕛 12h</span><span class="lvl">C1</span><span class="cta-pill">CTA: <b>Salva pra não esquecer</b></span></div>
+        <div class="post__title">Dá pra sair do emprego sem perder seus direitos</div>
+        <div class="file">criativo-02-sair-sem-perder-direitos.png</div>
+        <div class="cap-head"><span class="cap-label">Legenda</span><button class="copy-btn" onclick="cp(this)">Copiar legenda</button></div>
+        <div class="cap">A maioria das pessoas acredita que só existem duas opções: continuar num emprego que adoece ou pedir demissão e perder tudo. Não é bem assim.
+
+A lei trabalhista enxerga que, às vezes, quem comete a falta grave é a empresa. Salário que vive atrasando, FGTS que nunca é depositado, humilhação na frente dos colegas. Quando isso acontece, o trabalhador pode considerar o contrato rompido por culpa do empregador.
+
+Na prática, isso significa sair do emprego recebendo as mesmas verbas de uma demissão sem justa causa. FGTS com a multa de 40%, aviso prévio, férias, 13º e o direito ao seguro-desemprego. Tudo o que você construiu continua sendo seu.
+
+A diferença entre perder tudo e sair com seus direitos garantidos está em entender qual é a sua real situação. Salva pra não esquecer e, se você está vivendo algo parecido, chama no direct que a gente conversa.
+<span class="tags">#rescisaoindireta #direitotrabalhista #assediomoral #fgts #clt #advogadatrabalhista #vitoriaes</span></div>
+      </div>
+    </div>
+
+    <div class="post">
+      <img class="post__thumb" src="rescisao-indireta-riscos/criativo-02-a-prova-e-sua.png" alt="">
+      <div>
+        <div class="post__meta"><span class="time">🕖 19h</span><span class="lvl">C1</span><span class="cta-pill">CTA: <b>Salva pra não esquecer</b></span></div>
+        <div class="post__title">Numa ação dessas, a prova é sua</div>
+        <div class="file">rescisao-indireta-riscos/criativo-02-a-prova-e-sua.png</div>
+        <div class="cap-head"><span class="cap-label">Legenda</span><button class="copy-btn" onclick="cp(this)">Copiar legenda</button></div>
+        <div class="cap">Esse é o ponto que mais pega o trabalhador de surpresa. Na rescisão indireta, é você quem precisa provar que a empresa cometeu a falta grave. A empresa não precisa provar que é inocente.
+
+Isso muda tudo. Não basta o fato ter acontecido, ele precisa ser demonstrado com documentos, mensagens e testemunhas. Muita gente vive uma injustiça real, mas não consegue comprovar, e a ação acaba enfraquecida por falta de prova, não porque a pessoa estava mentindo.
+
+O assédio moral é o exemplo mais comum. Acontece em conversas, perseguições, olhares no dia a dia. Provar exige testemunhas dispostas a falar e um histórico guardado com cuidado, construído ao longo do tempo.
+
+Por isso o melhor momento para começar a reunir provas é agora, e não depois. Salva pra não esquecer e, se precisar, me chama para entender o que serve como prova no seu caso.
+<span class="tags">#rescisaoindireta #provatrabalhista #onusdaprova #direitotrabalhista #assediomoral #advogadatrabalhista #vitoriaes</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SEXTA 03 ===== -->
+  <div class="day">
+    <div class="day__head"><span class="day__num">03</span><span class="day__dow">Sexta-feira</span></div>
+
+    <div class="post">
+      <img class="post__thumb" src="criativo-03-rescisao-paga-tudo.png" alt="">
+      <div>
+        <div class="post__meta"><span class="time">🕛 12h</span><span class="lvl">C2</span><span class="cta-pill">CTA: <b>Veja se é o seu caso</b></span></div>
+        <div class="post__title">A rescisão indireta paga tudo isso a você</div>
+        <div class="file">criativo-03-rescisao-paga-tudo.png</div>
+        <div class="cap-head"><span class="cap-label">Legenda</span><button class="copy-btn" onclick="cp(this)">Copiar legenda</button></div>
+        <div class="cap">Imagina sair de um emprego que estava te fazendo mal e, ainda assim, receber tudo o que teria direito se a empresa tivesse te mandado embora. É justamente isso que a rescisão indireta prevê para quem foi prejudicado pelo empregador.
+
+Quando reconhecida, ela libera o saldo de salário, o aviso prévio, as férias vencidas e proporcionais com o terço, o 13º proporcional, o saque de todo o FGTS, a multa de 40% paga pela empresa e o direito ao seguro-desemprego. Nada de abrir mão do que é seu.
+
+Foi o que aconteceu com uma cliente que acumulava funções e ainda enfrentava salário atrasado todo mês. Ela achava que só restava pedir demissão. Com os documentos certos, entramos com o pedido de rescisão indireta para buscar as verbas que ela tinha direito.
+
+Se a sua empresa está descumprindo o combinado, talvez o seu caso se encaixe aqui. Veja se é o seu caso e me chama no WhatsApp para uma análise sem compromisso.
+<span class="tags">#rescisaoindireta #verbasrescisorias #fgts #multados40 #direitotrabalhista #advogadatrabalhista #vitoriaes</span></div>
+      </div>
+    </div>
+
+    <div class="post">
+      <img class="post__thumb" src="rescisao-indireta-riscos/criativo-03-sair-errado.png" alt="">
+      <div>
+        <div class="post__meta"><span class="time">🕖 19h</span><span class="lvl">C2</span><span class="cta-pill">CTA: <b>Veja como evitar</b></span></div>
+        <div class="post__title">Sair errado pode virar pedido de demissão</div>
+        <div class="file">rescisao-indireta-riscos/criativo-03-sair-errado.png</div>
+        <div class="cap-head"><span class="cap-label">Legenda</span><button class="copy-btn" onclick="cp(this)">Copiar legenda</button></div>
+        <div class="cap">Esse é o risco que mais preocupa, e o que poucos explicam com clareza. Se você sai do emprego alegando rescisão indireta e a Justiça depois não reconhece a falta grave da empresa, a sua saída pode ser interpretada como pedido de demissão.
+
+Na prática, é perder exatamente aquilo que você foi buscar. Sem multa de 40% do FGTS, sem seguro-desemprego, sem aviso prévio indenizado. Você fica sem o emprego e sem as verbas, o pior dos dois mundos.
+
+É por isso que a decisão de sair antes ou continuar trabalhando enquanto a ação corre não é um detalhe. Ela depende da força das suas provas e da gravidade do caso, e precisa ser pensada com orientação, nunca no calor da emoção.
+
+Antes de tomar qualquer atitude, vale conversar com quem vai te dizer a verdade sobre as suas chances. Veja como evitar esse risco e me chame para avaliar o seu caso.
+<span class="tags">#rescisaoindireta #pedidodedemissao #fgts #segurodesemprego #direitotrabalhista #advogadatrabalhista #vitoriaes</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SÁBADO 04 ===== -->
+  <div class="day">
+    <div class="day__head"><span class="day__num">04</span><span class="day__dow">Sábado</span></div>
+
+    <div class="post">
+      <img class="post__thumb" src="criativo-04-demissao-x-rescisao.png" alt="">
+      <div>
+        <div class="post__meta"><span class="time">🕛 12h</span><span class="lvl">C2</span><span class="cta-pill">CTA: <b>Entenda seu caso</b></span></div>
+        <div class="post__title">Demissão ou rescisão indireta?</div>
+        <div class="file">criativo-04-demissao-x-rescisao.png</div>
+        <div class="cap-head"><span class="cap-label">Legenda</span><button class="copy-btn" onclick="cp(this)">Copiar legenda</button></div>
+        <div class="cap">Duas saídas parecem iguais quando você só quer se livrar de um emprego ruim, mas o resultado financeiro de cada uma é completamente diferente.
+
+No pedido de demissão, é o trabalhador que decide sair sem que a empresa tenha culpa. Por isso, ele não saca o FGTS, não recebe a multa de 40% e fica sem o seguro-desemprego. Quem está exausto costuma escolher esse caminho sem saber o quanto deixa para trás.
+
+Na rescisão indireta, quem deu causa à saída foi a empresa, que descumpriu suas obrigações. O trabalhador sai recebendo as mesmas verbas de uma demissão sem justa causa, porque a responsabilidade pela ruptura é do empregador.
+
+Saber em qual das duas situações você se encaixa pode representar uma diferença grande no seu bolso. Entenda seu caso comigo antes de decidir qualquer coisa.
+<span class="tags">#rescisaoindireta #pedidodedemissao #direitotrabalhista #fgts #clt #advogadatrabalhista #vitoriaes</span></div>
+      </div>
+    </div>
+
+    <div class="post">
+      <img class="post__thumb" src="rescisao-indireta-riscos/criativo-04-quando-e-forte.png" alt="">
+      <div>
+        <div class="post__meta"><span class="time">🕖 19h</span><span class="lvl">C2</span><span class="cta-pill">CTA: <b>Avalie seu caso</b></span></div>
+        <div class="post__title">Quando a rescisão indireta é forte</div>
+        <div class="file">rescisao-indireta-riscos/criativo-04-quando-e-forte.png</div>
+        <div class="cap-head"><span class="cap-label">Legenda</span><button class="copy-btn" onclick="cp(this)">Copiar legenda</button></div>
+        <div class="cap">Depois de falar dos riscos, é justo mostrar o outro lado. A rescisão indireta é um dos instrumentos mais importantes de proteção do trabalhador quando usada no momento certo.
+
+Ela tende a ser sólida quando existe uma falta grave e contínua da empresa, como o FGTS sem depósito por meses ou o salário sempre atrasado. Quando as provas estão reunidas, documentos, mensagens e testemunhas. E quando a decisão de sair ou continuar foi tomada com orientação, e não no impulso.
+
+Nessas condições, ela deixa de ser uma aposta arriscada e passa a ser uma ferramenta de defesa. Existe exatamente para que você não precise escolher entre a sua dignidade e os seus direitos.
+
+Se a sua situação se parece com isso, talvez seja a hora de avaliar a sério. Me chama para olharmos o seu caso com franqueza.
+<span class="tags">#rescisaoindireta #direitotrabalhista #fgts #verbasrescisorias #clt #advogadatrabalhista #vitoriaes</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DOMINGO 05 ===== -->
+  <div class="day day--sun">
+    <div class="day__head"><span class="day__num">05</span><span class="day__dow">Domingo</span><span class="tag-conv">Dia de conversão</span></div>
+
+    <div class="post">
+      <img class="post__thumb" src="criativo-05-como-provar.png" alt="">
+      <div>
+        <div class="post__meta"><span class="time">🕛 12h</span><span class="lvl">C3</span><span class="cta-pill wpp">CTA: <b>Fale no WhatsApp</b></span></div>
+        <div class="post__title">Mas como eu provo que a empresa errou?</div>
+        <div class="file">criativo-05-como-provar.png</div>
+        <div class="cap-head"><span class="cap-label">Legenda</span><button class="copy-btn" onclick="cp(this)">Copiar legenda</button></div>
+        <div class="cap">Essa é a pergunta que trava a maioria das pessoas. Elas sabem que estão sendo prejudicadas, mas acham que nunca vão conseguir provar nada contra a empresa. E é justamente por isso que muita gente desiste antes de tentar.
+
+Na maioria das vezes, a prova já está com você. Extratos bancários mostrando salário atrasado, o extrato do FGTS pelo aplicativo da Caixa apontando os meses sem depósito, mensagens de WhatsApp e e-mails com cobranças ou ordens. Tudo isso constrói o seu caso.
+
+Some a isso o depoimento de colegas que presenciaram o que aconteceu e você tem um conjunto sólido. O segredo está em começar a guardar essas provas a partir de hoje, com data, e não esperar o problema piorar para reunir tudo de uma vez.
+
+Se você está nessa dúvida, não precisa enfrentar isso sozinha. Me chama no WhatsApp que eu te explico o que serve como prova no seu caso.
+<span class="tags">#rescisaoindireta #provatrabalhista #direitotrabalhista #fgts #assediomoral #advogadatrabalhista #vitoriaes</span></div>
+      </div>
+    </div>
+
+    <div class="post">
+      <img class="post__thumb" src="rescisao-indireta-riscos/criativo-05-antes-de-largar.png" alt="">
+      <div>
+        <div class="post__meta"><span class="time">🕖 19h</span><span class="lvl">C3</span><span class="cta-pill wpp">CTA: <b>Fale no WhatsApp</b></span></div>
+        <div class="post__title">Antes de largar o emprego, leia isto</div>
+        <div class="file">rescisao-indireta-riscos/criativo-05-antes-de-largar.png</div>
+        <div class="cap-head"><span class="cap-label">Legenda</span><button class="copy-btn" onclick="cp(this)">Copiar legenda</button></div>
+        <div class="cap">Quando a situação no trabalho fica insuportável, o impulso é largar tudo e ir embora. Eu entendo. Mas é justamente essa decisão no impulso que mais enfraquece o seu caso.
+
+Sair sem provas reunidas e sem orientação pode transformar uma rescisão indireta legítima em algo tratado como pedido de demissão. O preço de uma decisão tomada na emoção costuma ser alto demais para quem já está sofrendo.
+
+O caminho mais seguro quase sempre começa antes da saída. Reunir documentos, entender se o caso tem sustentação e definir a estratégia de sair ou continuar. Tudo isso protege você e fortalece a sua posição.
+
+Você não precisa decidir sozinha nem no calor do momento. Me chama no WhatsApp antes de qualquer atitude e vamos avaliar juntas, com sinceridade, o melhor caminho para o seu caso.
+<span class="tags">#rescisaoindireta #direitotrabalhista #assediomoral #fgts #advogadatrabalhista #vitoriaes #direitosdotrabalhador</span></div>
+      </div>
+    </div>
   </div>
 
   <p class="foot">
     Metodologia Andromeda: <b>4×C1 → 4×C2 → 2×C3</b> (educa e depois converte).<br>
-    Legendas: <b>legendas.md</b> (direitos) · <b>rescisao-indireta-riscos/legendas.md</b> (riscos).<br>
+    Clique em <b>Copiar legenda</b> para colar direto no agendador ou no Instagram.<br>
     Responda comentários e DMs no mesmo dia — o algoritmo valoriza a interação.
   </p>
 
 </div>
+
+<script>
+function cp(btn){
+  const cap = btn.closest('.post').querySelector('.cap');
+  // texto com quebras de linha reais
+  const txt = cap.innerText.trim();
+  const done = () => { const o=btn.textContent; btn.textContent='✓ Copiado!'; btn.classList.add('done'); setTimeout(()=>{btn.textContent=o;btn.classList.remove('done');},1800); };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(done).catch(()=>fallback(txt,done));
+  } else { fallback(txt,done); }
+}
+function fallback(txt,done){
+  const ta=document.createElement('textarea');
+  ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.select();
+  try{document.execCommand('copy');done();}catch(e){alert('Selecione o texto e copie manualmente.');}
+  document.body.removeChild(ta);
+}
+</script>
 </body>
 </html>
