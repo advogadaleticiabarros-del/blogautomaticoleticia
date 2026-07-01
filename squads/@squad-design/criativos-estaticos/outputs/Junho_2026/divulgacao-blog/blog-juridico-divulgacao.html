@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<!-- Peça de divulgação do Blog Jurídico — 1080x1920 (render 2x = 2160x3840) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --dourado:#C9A962; --dourado-claro:#E8D7A6; --dourado-escuro:#A8863F;
+    --grad:linear-gradient(135deg,#E8D7A6,#C9A962 45%,#A8863F);
+    --escuro:#231E1A; --alt:#2E2720; --claro:#F5F1EB;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{margin:0}
+  .peca{
+    width:1080px;height:1920px;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;align-items:center;
+    padding:80px 84px 70px;
+    font-family:'Inter',sans-serif;color:var(--claro);
+    background:
+      radial-gradient(circle at 88% 6%, rgba(201,169,98,.16), transparent 34%),
+      radial-gradient(circle at 6% 40%, rgba(201,169,98,.10), transparent 30%),
+      linear-gradient(165deg,#221C18 0%, #2B2420 55%, #1E1915 100%);
+  }
+  /* ornamentos dourados */
+  .orn{position:absolute;z-index:0;pointer-events:none}
+  .orn.l1{top:-60px;left:-40px;width:420px;height:420px;border:2px solid rgba(201,169,98,.18);border-radius:50%}
+  .orn.l2{top:20px;left:-120px;width:520px;height:520px;border:1px solid rgba(201,169,98,.12);border-radius:50%}
+  .orn.dots{top:360px;right:70px;width:170px;height:120px;
+    background-image:radial-gradient(rgba(201,169,98,.35) 3px, transparent 3px);
+    background-size:34px 34px}
+  .orn.bigLB{position:absolute;right:-60px;top:640px;font-family:'Playfair Display',serif;
+    font-size:520px;font-weight:900;color:rgba(201,169,98,.05);z-index:0;line-height:1}
+  .peca::before{content:'';position:absolute;inset:34px;border:1.5px solid rgba(201,169,98,.4);border-radius:26px;z-index:5;pointer-events:none}
+
+  /* topo marca */
+  .brand{position:relative;z-index:2;display:flex;align-items:center;gap:22px;margin-bottom:44px}
+  .brand img{width:112px;height:112px;object-fit:contain;filter:drop-shadow(0 3px 12px rgba(0,0,0,.5))}
+  .brand .nm{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.05}
+  .brand .sb{font-size:17px;letter-spacing:4px;text-transform:uppercase;color:var(--dourado);margin-top:6px}
+
+  /* título */
+  .head{position:relative;z-index:2;width:100%;text-align:left;margin-bottom:30px}
+  .kicker{display:inline-flex;align-items:center;gap:16px;font-size:24px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--dourado-claro);margin-bottom:18px}
+  .kicker::before{content:'';width:54px;height:2px;background:var(--grad)}
+  h1{font-family:'Playfair Display',serif;font-weight:900;font-size:132px;line-height:1.0}
+  h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .lead{position:relative;z-index:2;width:100%;font-size:37px;line-height:1.5;color:rgba(245,241,235,.8);margin-top:8px}
+  .lead b{color:var(--dourado-claro);font-weight:700}
+  .lead .p2{margin-top:20px}
+
+  /* mockup celular */
+  .phone-wrap{position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;margin:26px 0 10px}
+  .phone{
+    width:470px;height:820px;border-radius:56px;padding:14px;
+    background:linear-gradient(160deg,#3a342e,#181410);
+    box-shadow:0 30px 80px rgba(0,0,0,.55), inset 0 0 0 2px rgba(201,169,98,.35);
+    position:relative;
+  }
+  .phone::after{content:'';position:absolute;top:26px;left:50%;transform:translateX(-50%);width:130px;height:12px;border-radius:999px;background:rgba(0,0,0,.5);z-index:3}
+  .phone__screen{width:100%;height:100%;border-radius:44px;overflow:hidden;background:#1c1713}
+  .phone__screen img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+
+  /* rodapé CTA */
+  .foot{position:relative;z-index:2;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .foot-row{display:flex;align-items:center;gap:24px;margin-bottom:26px}
+  .foot-ic{width:96px;height:96px;flex-shrink:0;border-radius:50%;border:2px solid rgba(201,169,98,.55);display:flex;align-items:center;justify-content:center;font-size:42px;color:var(--dourado)}
+  .foot-tt{font-family:'Playfair Display',serif;font-size:44px;line-height:1.2;text-align:left}
+  .foot-tt em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .btn{display:inline-flex;align-items:center;gap:18px;background:var(--grad);color:var(--escuro);font-size:42px;font-weight:700;letter-spacing:1px;padding:28px 70px;border-radius:16px;box-shadow:0 10px 34px rgba(201,169,98,.4);text-transform:uppercase}
+  .handle{margin-top:24px;font-size:26px;color:rgba(245,241,235,.65);font-weight:600}
+  .handle .site{color:var(--dourado)}
+</style>
+</head>
+<body>
+  <div class="peca">
+    <span class="orn l1"></span>
+    <span class="orn l2"></span>
+    <span class="orn dots"></span>
+    <span class="orn bigLB">LB</span>
+
+    <div class="brand">
+      <img src="file:///C:/Users/prosy/blogautomaticoleticia/squads/@squad-design/criativos-estaticos/assets/logo-lb.png" alt="Letícia Barros">
+      <div>
+        <div class="nm">Letícia Barros</div>
+        <div class="sb">Advocacia &amp; Consultoria</div>
+      </div>
+    </div>
+
+    <div class="head">
+      <span class="kicker">Conteúdo</span>
+      <h1>Blog <em>Jurídico</em></h1>
+    </div>
+    <p class="lead">
+      Direitos, deveres e soluções jurídicas com <b>linguagem clara</b> e acessível.
+      <span class="p2">Do Trabalhista ao Previdenciário, <b>informação confiável</b> para o seu dia a dia.</span>
+    </p>
+
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone__screen">
+          <img src="file:///C:/Users/prosy/blogautomaticoleticia/squads/@squad-design/criativos-estaticos/assets/blog-mobile-screenshot.png" alt="Blog no celular">
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <div class="foot-row">
+        <div class="foot-ic"><i class="fa-solid fa-pen-to-square"></i></div>
+        <div class="foot-tt">Acesse agora e fique<br>por dentro dos <em>seus direitos</em>.</div>
+      </div>
+      <div class="btn"><i class="fa-solid fa-link"></i> Acesse o blog</div>
+      <div class="handle">@adv.leticiabarros2 · <span class="site">advogadaleticiabarros.com.br/blog</span></div>
+    </div>
+  </div>
+</body>
+</html>
