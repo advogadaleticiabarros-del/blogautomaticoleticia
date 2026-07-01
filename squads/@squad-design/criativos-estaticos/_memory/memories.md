@@ -18,9 +18,10 @@ Recebe briefings aprovados (da squad `blog-para-social`) e produz criativos est�
 - NÃO: fundo vermelho, CTA genérico, promessa de resultado (regra OAB)
 - Referência visual: feed do Instagram da cliente — molduras douradas ornamentadas, selo dourado, tipografia dourada sobre fundo sépia/escuro.
 
-## Template
+## Templates
 
-- `templates/criativo-4x5.html` (1080×1350, placeholders entre [COLCHETES])
+- `templates/criativo-4x5.html` — feed (1080×1350)
+- `templates/story-9x16.html` — Stories (1080×1920), mesma identidade dourada + logo. Render: `--window-size=1080,1920`. Placeholders: [LOGO_SRC] [IMAGEM_FUNDO] [KICKER] [HEADLINE] [LEAD] [PILL].
 - Suporta IMAGEM DE FUNDO: `<img class="bg-image">` (opacity 0.42) + `.bg-overlay` (gradiente escuro) garantem legibilidade do texto. Para criativo só-tipografia, remover essas 2 tags.
 
 ## Pipeline (2 passos)
