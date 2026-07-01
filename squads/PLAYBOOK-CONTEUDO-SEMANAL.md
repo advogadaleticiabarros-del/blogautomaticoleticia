@@ -79,11 +79,21 @@ Para CADA artigo:
 5. Revisar visualmente cada PNG (texto dentro da moldura, legibilidade, imagem coerente).
 6. Salvar em `outputs/[Mês_Ano]/` (artigo 1) e `outputs/[Mês_Ano]/[slug-artigo-2]/` (artigo 2).
 
-## PASSO 3 — Escrever as 10 legendas
-1. Uma legenda por criativo (Isabela Moura): gancho distinto da headline, 3-4 parágrafos de
-   raciocínio progressivo (sem lista de tópicos), CTA integrado, 7 hashtags do setor.
+## PASSO 3 — Escrever as 10 legendas  (ESTRUTURA FIXA)
+1. Uma legenda por criativo (Isabela Moura), nesta ordem:
+   - **Corpo:** gancho distinto da headline, 3 parágrafos de raciocínio progressivo (sem lista de
+     tópicos), com **palavras-chave SEO** do tema usadas com naturalidade (ex.: "rescisão indireta",
+     "direitos do trabalhador", "FGTS", "artigo 483 da CLT", "advogada trabalhista em Vitória-ES").
+   - **📖 Chamada para o BLOG (obrigatória):** convidar para ler o artigo completo no blog, com
+     "link na bio: advogadaleticiabarros.com.br/blog". Variar a frase entre os posts. Isso reforça
+     SEO e leva tráfego ao blog.
+   - **👉 Gancho do PRÓXIMO post (obrigatório):** anunciar o próximo conteúdo na ORDEM DO CALENDÁRIO
+     (o post do meio-dia anuncia o das 19h do mesmo dia; o das 19h anuncia o meio-dia do dia seguinte).
+     O último post da semana (dom 19h) anuncia o tema da próxima semana + pergunta nos comentários.
+   - **Hashtags:** 7 do setor.
 2. **Revisão editorial (Marcos Vinicius):** checar Manual de Proibições e OAB. Corrigir clichês.
-3. Salvar `legendas.md` na mesma pasta dos criativos de cada artigo.
+3. Salvar `legendas.md` na mesma pasta dos criativos de cada artigo. Espelhar as legendas no
+   `calendario-postagem.html` (com botão copiar), destacando as linhas 📖 blog e 👉 próximo.
 
 ## PASSO 4 — Gerar os 3 Stories (9:16, 1080×1920)
 Usar `templates/story-9x16.html` (dourado + logo). Render `--window-size=1080,1920`.
