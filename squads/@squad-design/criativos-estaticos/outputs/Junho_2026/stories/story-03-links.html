@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<!-- STORY 9:16 — 1080x1920 — Links dos artigos da semana -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dourado:#C9A962; --dourado-claro:#E8D7A6; --dourado-escuro:#A8863F;
+    --grad:linear-gradient(135deg,#E8D7A6,#C9A962 45%,#A8863F);
+    --escuro:#231E1A; --alt:#2E2720; --claro:#F5F1EB;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{margin:0}
+  .story{
+    width:1080px;height:1920px;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;align-items:center;
+    padding:110px 80px 120px;
+    font-family:'Inter',sans-serif;color:var(--claro);
+    background:
+      radial-gradient(circle at 82% 8%, rgba(201,169,98,.16), transparent 40%),
+      linear-gradient(165deg,var(--escuro) 0%, var(--alt) 100%);
+  }
+  .bg-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.20}
+  .bg-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(35,30,26,.72),rgba(35,30,26,.9) 55%,rgba(35,30,26,.97))}
+  .story::before{content:'';position:absolute;inset:40px;border:1.5px solid rgba(201,169,98,.5);border-radius:26px;z-index:3;pointer-events:none}
+
+  .top{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:20px}
+  .logo{width:130px;height:130px;object-fit:contain;filter:drop-shadow(0 3px 12px rgba(0,0,0,.5));margin-bottom:14px}
+  .brand-name{font-family:'Playfair Display',serif;font-size:40px;font-weight:700}
+  .brand-sub{font-size:17px;letter-spacing:4px;text-transform:uppercase;color:var(--dourado);margin-top:5px}
+
+  .head{position:relative;z-index:2;text-align:center;margin:36px 0 44px}
+  .kicker{font-size:26px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--dourado-claro);margin-bottom:18px}
+  h1{font-family:'Playfair Display',serif;font-weight:900;font-size:72px;line-height:1.08}
+  h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+  .cards{position:relative;z-index:2;display:flex;flex-direction:column;gap:40px;width:100%;flex:1;justify-content:center}
+  .card{
+    background:rgba(46,39,32,.65);border:1.5px solid rgba(201,169,98,.3);
+    border-radius:22px;padding:44px 44px 40px;text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,.35);
+  }
+  .card .num{font-family:'Playfair Display',serif;font-size:34px;color:var(--dourado);font-weight:700;margin-bottom:6px}
+  .card .tt{font-family:'Playfair Display',serif;font-size:46px;line-height:1.18;margin-bottom:8px}
+  .card .desc{font-size:28px;color:rgba(245,241,235,.72);line-height:1.45;margin-bottom:30px}
+  .linkpill{
+    display:inline-flex;align-items:center;gap:14px;background:var(--grad);color:var(--escuro);
+    font-size:34px;font-weight:700;padding:22px 46px;border-radius:999px;
+    box-shadow:0 8px 26px rgba(201,169,98,.4);
+  }
+  .hint{position:relative;z-index:2;font-size:24px;color:rgba(245,241,235,.55);text-align:center;margin-top:34px;line-height:1.5}
+  .handle{position:relative;z-index:2;font-size:28px;color:rgba(245,241,235,.7);font-weight:600;text-align:center;margin-top:20px}
+  .handle .oab{display:block;font-size:22px;color:var(--dourado);margin-top:6px}
+</style>
+</head>
+<body>
+  <div class="story">
+    <img class="bg-image" src="file:///C:/Users/prosy/blogautomaticoleticia/squads/@squad-design/criativos-estaticos/assets/logo-lb.png" alt="">
+    <div class="bg-overlay"></div>
+
+    <div class="top">
+      <img class="logo" src="file:///C:/Users/prosy/blogautomaticoleticia/squads/@squad-design/criativos-estaticos/assets/logo-lb.png" alt="Letícia Barros">
+      <div class="brand-name">Letícia Barros</div>
+      <div class="brand-sub">Advocacia &amp; Consultoria</div>
+    </div>
+
+    <div class="head">
+      <span class="kicker">Leia na íntegra</span>
+      <h1>Os 2 artigos da <em>semana</em></h1>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="num">01 · Seus direitos</div>
+        <div class="tt">Rescisão indireta: o que é e quando você tem direito</div>
+        <div class="desc">Salário atrasado, FGTS ou assédio? Entenda como sair recebendo tudo.</div>
+        <span class="linkpill">👆 Toque para ler</span>
+      </div>
+
+      <div class="card">
+        <div class="num">02 · Os riscos</div>
+        <div class="tt">Rescisão indireta vale a pena? Os riscos reais</div>
+        <div class="desc">A verdade sincera sobre o que avaliar antes de entrar com a ação.</div>
+        <span class="linkpill">👆 Toque para ler</span>
+      </div>
+    </div>
+
+    <div class="hint">Toque nos links acima para ler os artigos completos no blog</div>
+    <div class="handle">@adv.leticiabarros2<span class="oab">advogadaleticiabarros.com.br</span></div>
+  </div>
+</body>
+</html>
