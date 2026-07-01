@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendário de Postagem · Letícia Barros · 01–05/07</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dourado:#C9A962; --dourado-claro:#E8D7A6; --dourado-escuro:#A8863F;
+    --grad:linear-gradient(135deg,#E8D7A6,#C9A962 45%,#A8863F);
+    --escuro:#231E1A; --alt:#2E2720; --claro:#F5F1EB; --wpp:#25D366;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Inter',sans-serif; color:var(--claro);
+    background:
+      radial-gradient(circle at 85% 8%, rgba(201,169,98,.14), transparent 40%),
+      linear-gradient(160deg,var(--escuro),var(--alt));
+    min-height:100vh; padding:56px 24px 80px;
+  }
+  .wrap{max-width:1080px;margin:0 auto}
+
+  /* Cabeçalho */
+  header{text-align:center;margin-bottom:14px}
+  .badge{
+    display:inline-block;background:var(--grad);color:var(--escuro);
+    font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    padding:7px 18px;border-radius:999px;margin-bottom:20px;
+    box-shadow:0 4px 18px rgba(201,169,98,.35);
+  }
+  h1{font-family:'Playfair Display',serif;font-weight:900;font-size:2.6rem;line-height:1.1;margin-bottom:12px}
+  h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .sub{color:rgba(245,241,235,.7);font-size:1.02rem;max-width:640px;margin:0 auto 8px;line-height:1.6}
+  .meta{color:var(--dourado-claro);font-size:.85rem;letter-spacing:1px;text-transform:uppercase;margin-top:10px}
+  .rule{height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,98,.5),transparent);margin:34px 0}
+
+  /* Legenda das colunas */
+  .legend{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:30px;font-size:.86rem}
+  .legend span{display:inline-flex;align-items:center;gap:8px;color:rgba(245,241,235,.75)}
+  .dot{width:11px;height:11px;border-radius:50%}
+  .dot.op{background:var(--dourado)}
+  .dot.ca{background:#8a8079}
+
+  /* Dia */
+  .day{
+    background:rgba(46,39,32,.55);border:1px solid rgba(201,169,98,.18);
+    border-radius:16px;padding:22px 24px;margin-bottom:22px;
+  }
+  .day__head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+  .day__num{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--dourado);font-weight:700}
+  .day__dow{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:rgba(245,241,235,.55)}
+  .day--sun .day__num{color:var(--dourado-claro)}
+  .day--sun .tag-conv{
+    margin-left:auto;background:rgba(37,211,102,.15);color:#4be48a;border:1px solid rgba(37,211,102,.4);
+    font-size:.66rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:999px;
+  }
+
+  .slots{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:720px){.slots{grid-template-columns:1fr}}
+
+  .post{display:flex;gap:16px;align-items:center;background:rgba(35,30,26,.5);border:1px solid rgba(201,169,98,.12);border-radius:12px;padding:12px;transition:.25s}
+  .post:hover{border-color:rgba(201,169,98,.4);transform:translateY(-2px)}
+  .post img{width:84px;height:105px;object-fit:cover;border-radius:8px;flex-shrink:0;border:1px solid rgba(201,169,98,.25)}
+  .post__body{min-width:0}
+  .post__time{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:1px;color:var(--escuro);background:var(--grad);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .post__lvl{font-size:.66rem;font-weight:700;letter-spacing:1px;color:var(--dourado);text-transform:uppercase;margin-left:6px}
+  .post__title{font-family:'Playfair Display',serif;font-size:1.02rem;line-height:1.25;margin-bottom:6px}
+  .post__cta{font-size:.78rem;color:rgba(245,241,235,.6)}
+  .post__cta b{color:var(--wpp);font-weight:600}
+
+  /* Resumo */
+  .summary{background:rgba(46,39,32,.55);border:1px solid rgba(201,169,98,.18);border-radius:16px;padding:24px 26px;margin-top:6px}
+  .summary h2{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--dourado);margin-bottom:16px}
+  table{width:100%;border-collapse:collapse;font-size:.88rem}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid rgba(201,169,98,.1)}
+  th{color:var(--dourado);font-size:.72rem;letter-spacing:1px;text-transform:uppercase}
+  td{color:rgba(245,241,235,.82)}
+  tr:last-child td{border-bottom:none}
+  .foot{text-align:center;color:rgba(245,241,235,.4);font-size:.8rem;margin-top:30px;line-height:1.7}
+  .foot b{color:var(--dourado-claro)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="badge">Plano de Conteúdo · Instagram</span>
+    <h1>Semana de <span>Rescisão Indireta</span></h1>
+    <p class="sub">10 posts · 2 por dia · @adv.leticiabarros2. O post do meio-dia traz o lado dos direitos; o da noite traz a cautela. A semana aquece a audiência e fecha convertendo no WhatsApp.</p>
+    <p class="meta">01 a 05 de julho de 2026 · 12h e 19h</p>
+  </header>
+
+  <div class="legend">
+    <span><i class="dot op"></i> 12h — Oportunidade (você tem direito)</span>
+    <span><i class="dot ca"></i> 19h — Cautela (mas jogue limpo)</span>
+  </div>
+
+  <!-- QUARTA -->
+  <div class="day">
+    <div class="day__head"><span class="day__num">01</span><span class="day__dow">Quarta-feira</span></div>
+    <div class="slots">
+      <div class="post">
+        <img src="criativo-01-pedir-demissao-custa-caro.png" alt="">
+        <div class="post__body">
+          <span class="post__time">🕛 12h</span><span class="post__lvl">C1</span>
+          <div class="post__title">Pedir demissão pode te custar caro</div>
+          <div class="post__cta">CTA: Salva esse post</div>
+        </div>
+      </div>
+      <div class="post">
+        <img src="rescisao-indireta-riscos/criativo-01-nao-e-por-qualquer-motivo.png" alt="">
+        <div class="post__body">
+          <span class="post__time">🕖 19h</span><span class="post__lvl">C1</span>
+          <div class="post__title">Rescisão indireta não é por qualquer motivo</div>
+          <div class="post__cta">CTA: Salva esse post</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUINTA -->
+  <div class="day">
+    <div class="day__head"><span class="day__num">02</span><span class="day__dow">Quinta-feira</span></div>
+    <div class="slots">
+      <div class="post">
+        <img src="criativo-02-sair-sem-perder-direitos.png" alt="">
+        <div class="post__body">
+          <span class="post__time">🕛 12h</span><span class="post__lvl">C1</span>
+          <div class="post__title">Dá pra sair do emprego sem perder seus direitos</div>
+          <div class="post__cta">CTA: Salva pra não esquecer</div>
+        </div>
+      </div>
+      <div class="post">
+        <img src="rescisao-indireta-riscos/criativo-02-a-prova-e-sua.png" alt="">
+        <div class="post__body">
+          <span class="post__time">🕖 19h</span><span class="post__lvl">C1</span>
+          <div class="post__title">Numa ação dessas, a prova é sua</div>
+          <div class="post__cta">CTA: Salva pra não esquecer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEXTA -->
+  <div class="day">
+    <div class="day__head"><span class="day__num">03</span><span class="day__dow">Sexta-feira</span></div>
+    <div class="slots">
+      <div class="post">
+        <img src="criativo-03-rescisao-paga-tudo.png" alt="">
+        <div class="post__body">
+          <span class="post__time">🕛 12h</span><span class="post__lvl">C2</span>
+          <div class="post__title">A rescisão indireta paga tudo isso a você</div>
+          <div class="post__cta">CTA: Veja se é o seu caso</div>
+        </div>
+      </div>
+      <div class="post">
+        <img src="rescisao-indireta-riscos/criativo-03-sair-errado.png" alt="">
+        <div class="post__body">
+          <span class="post__time">🕖 19h</span><span class="post__lvl">C2</span>
+          <div class="post__title">Sair errado pode virar pedido de demissão</div>
+          <div class="post__cta">CTA: Veja como evitar</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SÁBADO -->
+  <div class="day">
+    <div class="day__head"><span class="day__num">04</span><span class="day__dow">Sábado</span></div>
+    <div class="slots">
+      <div class="post">
+        <img src="criativo-04-demissao-x-rescisao.png" alt="">
+        <div class="post__body">
+          <span class="post__time">🕛 12h</span><span class="post__lvl">C2</span>
+          <div class="post__title">Demissão ou rescisão indireta?</div>
+          <div class="post__cta">CTA: Entenda seu caso</div>
+        </div>
+      </div>
+      <div class="post">
+        <img src="rescisao-indireta-riscos/criativo-04-quando-e-forte.png" alt="">
+        <div class="post__body">
+          <span class="post__time">🕖 19h</span><span class="post__lvl">C2</span>
+          <div class="post__title">Quando a rescisão indireta é forte</div>
+          <div class="post__cta">CTA: Avalie seu caso</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOMINGO -->
+  <div class="day day--sun">
+    <div class="day__head"><span class="day__num">05</span><span class="day__dow">Domingo</span><span class="tag-conv">Dia de conversão</span></div>
+    <div class="slots">
+      <div class="post">
+        <img src="criativo-05-como-provar.png" alt="">
+        <div class="post__body">
+          <span class="post__time">🕛 12h</span><span class="post__lvl">C3</span>
+          <div class="post__title">Mas como eu provo que a empresa errou?</div>
+          <div class="post__cta">CTA: <b>Fale no WhatsApp</b></div>
+        </div>
+      </div>
+      <div class="post">
+        <img src="rescisao-indireta-riscos/criativo-05-antes-de-largar.png" alt="">
+        <div class="post__body">
+          <span class="post__time">🕖 19h</span><span class="post__lvl">C3</span>
+          <div class="post__title">Antes de largar o emprego, leia isto</div>
+          <div class="post__cta">CTA: <b>Fale no WhatsApp</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="summary">
+    <h2>Visão da semana</h2>
+    <table>
+      <thead><tr><th>Dia</th><th>12h · Oportunidade</th><th>19h · Cautela</th></tr></thead>
+      <tbody>
+        <tr><td>Qua 01</td><td>C1 · demissão custa caro</td><td>C1 · não é por qualquer motivo</td></tr>
+        <tr><td>Qui 02</td><td>C1 · sair sem perder direitos</td><td>C1 · a prova é sua</td></tr>
+        <tr><td>Sex 03</td><td>C2 · paga tudo isso</td><td>C2 · sair errado</td></tr>
+        <tr><td>Sáb 04</td><td>C2 · demissão x rescisão</td><td>C2 · quando é forte</td></tr>
+        <tr><td>Dom 05</td><td>C3 · como provar</td><td>C3 · antes de largar</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="foot">
+    Metodologia Andromeda: <b>4×C1 → 4×C2 → 2×C3</b> (educa e depois converte).<br>
+    Legendas: <b>legendas.md</b> (direitos) · <b>rescisao-indireta-riscos/legendas.md</b> (riscos).<br>
+    Responda comentários e DMs no mesmo dia — o algoritmo valoriza a interação.
+  </p>
+
+</div>
+</body>
+</html>
