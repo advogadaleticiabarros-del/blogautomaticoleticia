@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<!-- TEMPLATE CARROSSEL 4:5 — 1080x1350 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dourado:#C9A962; --dourado-claro:#E8D7A6; --dourado-escuro:#A8863F;
+    --grad:linear-gradient(135deg,#E8D7A6,#C9A962 45%,#A8863F);
+    --escuro:#231E1A; --alt:#2E2720; --claro:#F5F1EB; --wpp:#25D366;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{margin:0}
+  .slide{
+    width:1080px;height:1350px;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:80px 84px 96px;
+    font-family:'Inter',sans-serif;color:var(--claro);
+    background:linear-gradient(160deg,var(--escuro),var(--alt));
+  }
+  .bg-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0;opacity:.62}
+  .bg-overlay{position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg, rgba(20,17,14,.35) 0%, rgba(20,17,14,.55) 45%, rgba(20,17,14,.94) 100%)}
+  .slide::before{content:'';position:absolute;inset:34px;border:1.5px solid rgba(201,169,98,.4);border-radius:24px;z-index:4;pointer-events:none}
+
+  /* topo: logo + indicador */
+  .top{position:absolute;top:76px;left:84px;right:84px;z-index:3;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:16px}
+  .brand img{width:74px;height:74px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.6))}
+  .brand .nm{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;line-height:1}
+  .brand .sb{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--dourado);margin-top:4px}
+  .pager{display:flex;gap:9px;align-items:center}
+  .pager i{width:12px;height:12px;border-radius:50%;background:rgba(245,241,235,.3)}
+  .pager i.on{background:var(--grad);width:30px;border-radius:999px}
+
+  /* conteúdo inferior */
+  .content{position:relative;z-index:2}
+  .kicker{display:inline-flex;align-items:center;gap:14px;font-size:22px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--dourado-claro);margin-bottom:20px}
+  .kicker::before{content:'';width:46px;height:2px;background:var(--grad)}
+  .headline{font-family:'Playfair Display',serif;font-weight:900;font-size:74px;line-height:1.08;margin-bottom:26px}
+  .headline em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .text{font-size:33px;line-height:1.5;color:rgba(245,241,235,.9);max-width:94%}
+  .text b{color:var(--dourado-claro);font-weight:600}
+
+  /* rodapé: seta ou CTA */
+  .foot{position:relative;z-index:2;margin-top:40px;display:flex;align-items:center;justify-content:space-between}
+  .swipe{display:inline-flex;align-items:center;gap:14px;font-size:26px;font-weight:600;color:var(--dourado-claro)}
+  .swipe .arrow{font-size:34px}
+  .cta{display:inline-flex;align-items:center;gap:14px;background:var(--grad);color:var(--escuro);font-size:30px;font-weight:700;padding:22px 44px;border-radius:999px;box-shadow:0 8px 26px rgba(201,169,98,.4)}
+  .handle{font-size:22px;color:rgba(245,241,235,.6);font-weight:600;text-align:right}
+</style>
+</head>
+<body>
+  <div class="slide">
+    <img class="bg-image" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=1080&q=80" alt="">
+    <div class="bg-overlay"></div>
+
+    <div class="top">
+      <div class="brand">
+        <img src="file:///C:/Users/prosy/blogautomaticoleticia/squads/@squad-design/criativos-estaticos/assets/logo-lb.png" alt="Letícia Barros">
+        <div><div class="nm">Letícia Barros</div><div class="sb">Advocacia</div></div>
+      </div>
+      <div class="pager"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+    </div>
+
+    <div class="content">
+      <span class="kicker">03 de julho</span>
+      <h1 class="headline">O racismo no trabalho é <em>crime</em></h1>
+      <p class="text">Dia Nacional de Combate à Discriminação Racial. E essa data é sobre gente de verdade.</p>
+    </div>
+
+    <div class="foot"><span class="swipe">Arrasta <span class="arrow">→</span></span><span class="handle">@adv.leticiabarros2</span></div>
+  </div>
+</body>
+</html>
