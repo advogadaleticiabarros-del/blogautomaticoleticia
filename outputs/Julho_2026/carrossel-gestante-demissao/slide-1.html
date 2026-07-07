@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dourado:       #C9A962;
+      --dourado-claro: #E8D7A6;
+      --dourado-escuro:#A8863F;
+      --grad-dourado:  linear-gradient(135deg, #E8D7A6 0%, #C9A962 45%, #A8863F 100%);
+      --fundo-escuro:  #231E1A;
+      --fundo-alt:     #2E2720;
+      --texto-claro:   #F5F1EB;
+      --whatsapp:      #25D366;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { margin: 0; background: var(--fundo-escuro); }
+
+    .creative {
+      width: 1080px;
+      height: 1350px;
+      background:
+        radial-gradient(circle at 80% 12%, rgba(201,169,98,0.16), transparent 42%),
+        linear-gradient(160deg, var(--fundo-escuro) 0%, var(--fundo-alt) 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 96px 88px;
+      font-family: 'Inter', sans-serif;
+      color: var(--texto-claro);
+    }
+
+    .bg-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+      opacity: 0.42;
+    }
+    .bg-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(35,30,26,0.55) 0%, rgba(35,30,26,0.80) 55%, rgba(35,30,26,0.94) 100%);
+    }
+
+    .creative::before {
+      content: '';
+      position: absolute;
+      inset: 36px;
+      border: 1.5px solid rgba(201,169,98,0.55);
+      border-radius: 18px;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .brand__logo {
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.45));
+      flex-shrink: 0;
+    }
+    .brand__text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .brand .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--texto-claro);
+    }
+    .brand .sub {
+      font-size: 15px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-top: 4px;
+    }
+    .cat {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--fundo-escuro);
+      background: var(--grad-dourado);
+      padding: 10px 22px;
+      border-radius: 999px;
+      box-shadow: 0 4px 18px rgba(201,169,98,0.35);
+    }
+
+    .center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+    .kicker {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--dourado-claro);
+      margin-bottom: 28px;
+      padding-left: 22px;
+      position: relative;
+    }
+    .kicker::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 3px;
+      background: var(--grad-dourado);
+    }
+    .headline {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 86px;
+      line-height: 1.06;
+      color: var(--texto-claro);
+      margin-bottom: 36px;
+    }
+    .headline em {
+      font-style: normal;
+      background: var(--grad-dourado);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subheadline {
+      font-size: 34px;
+      font-weight: 400;
+      line-height: 1.45;
+      color: rgba(245,241,235,0.82);
+      max-width: 88%;
+    }
+
+    .bottom {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--grad-dourado);
+      color: var(--fundo-escuro);
+      font-size: 28px;
+      font-weight: 700;
+      padding: 22px 42px;
+      border-radius: 999px;
+      box-shadow: 0 6px 24px rgba(201,169,98,0.40);
+      border: 1px solid rgba(232,215,166,0.6);
+    }
+    .handle {
+      font-size: 24px;
+      font-weight: 600;
+      color: rgba(245,241,235,0.65);
+      text-align: right;
+    }
+    .handle .oab {
+      display: block;
+      font-size: 18px;
+      color: var(--dourado);
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="creative">
+    <img class="bg-image" src="" alt="">
+    <div class="bg-overlay"></div>
+
+    <div class="top">
+      <div class="brand">
+        <svg class="brand__logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#C9A962" rx="12"/>
+          <text x="50" y="65" font-family="Playfair Display, serif" font-size="48" font-weight="700" fill="#231E1A" text-anchor="middle">LB</text>
+        </svg>
+        <div class="brand__text">
+          <span class="name">Letícia Barros</span>
+          <span class="sub">Advocacia</span>
+        </div>
+      </div>
+      <span class="cat">Direitos</span>
+    </div>
+
+    <div class="center">
+      <span class="kicker">Você Sabia?</span>
+      <h1 class="headline">GRÁVIDA PEDIU DEMISSÃO?<br><em>ISSO É NULO</em></h1>
+      <p class="subheadline">A lei mudou em 2025. Você tem direitos garantidos.</p>
+    </div>
+
+    <div class="bottom">
+      <span class="cta">💬 Deslize</span>
+      <span class="handle">
+        @adv.leticiabarros2
+        <span class="oab">OAB/ES 39.948</span>
+      </span>
+    </div>
+  </div>
+</body>
+</html>
