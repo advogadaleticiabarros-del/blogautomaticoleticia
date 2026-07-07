@@ -1,1 +1,202 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><style>*{margin:0;padding:0;box-sizing:border-box}body{width:1080px;height:1350px;font-family:'Inter',sans-serif;background:linear-gradient(135deg, #2a2420 0%, #1f1c19 100%);color:#F5F1EB;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 60px;text-align:center}.badge{display:inline-block;background:#C9A962;color:#1a1a1a;padding:10px 24px;border-radius:8px;font-size:0.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:35px}.title{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;margin-bottom:50px;color:#F5F1EB;line-height:1.3}.reason-box{background:rgba(201,169,98,0.1);border-left:4px solid #C9A962;padding:50px;margin:40px 0;border-radius:4px;max-width:850px}.reason-title{font-size:2rem;color:#C9A962;font-weight:700;margin-bottom:25px;font-family:'Playfair Display',serif}.reason-text{font-size:1.6rem;color:#A89968;line-height:1.9;margin-bottom:15px}.highlight{color:#F5F1EB;font-size:2.2rem;font-weight:700;margin-top:35px}</style></head><body><div class="badge">TST 2025</div><h2 class="title">Por Que é Fácil Agora</h2><div class="reason-box"><p class="reason-title">Sem Sindicato = Nulidade Automática</p><p class="reason-text">Você não precisa provar coação.</p><p class="reason-text">Basta mostrar que faltou assistência sindical.</p></div><p class="highlight">A Lei Mudou a Seu Favor ✓</p></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vícios de Consentimento — Você foi Coagida?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #1a3a5c;
+            --color-accent: #c8a96e;
+            --color-cta: #25D366;
+            --color-dark: #1a1a2e;
+            --color-light: #ffffff;
+            --color-bg: #f8f6f0;
+            --color-muted: #6b7280;
+            --color-border: #e5e0d8;
+        }
+
+        body {
+            width: 1080px;
+            height: 1350px;
+            font-family: 'Inter', sans-serif;
+            background: var(--color-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-bg) 0%, #f0ede5 100%);
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350"><defs><pattern id="pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23c8a96e" opacity="0.1"/></pattern></defs><rect width="1080" height="1350" fill="url(%23pattern)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 50px 40px;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .kicker {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1.3;
+            margin-bottom: 35px;
+            letter-spacing: -0.5px;
+        }
+
+        .vices-list {
+            width: 100%;
+            max-width: 650px;
+            text-align: left;
+        }
+
+        .vice-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.6);
+            border-left: 4px solid var(--color-accent);
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: var(--color-dark);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .vice-icon {
+            font-size: 18px;
+            margin-right: 15px;
+            color: var(--color-primary);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .vice-title {
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .vice-desc {
+            font-size: 14px;
+            color: var(--color-muted);
+            margin-top: 3px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            z-index: 10;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent);
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .pager {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--color-muted);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-content">
+            <div class="kicker">Fundamentos Legais</div>
+            <div class="headline">Vícios de Consentimento</div>
+            <div class="vices-list">
+                <div class="vice-item">
+                    <span class="vice-icon">1</span>
+                    <span>
+                        <div class="vice-title">Coação</div>
+                        <div class="vice-desc">Pressão da empresa para você pedir demissão</div>
+                    </span>
+                </div>
+                <div class="vice-item">
+                    <span class="vice-icon">2</span>
+                    <span>
+                        <div class="vice-title">Desconhecimento</div>
+                        <div class="vice-desc">Você não sabia de seus direitos de gestante</div>
+                    </span>
+                </div>
+                <div class="vice-item">
+                    <span class="vice-icon">3</span>
+                    <span>
+                        <div class="vice-title">Falta de Homologação</div>
+                        <div class="vice-desc">Seu pedido não foi formalizado legalmente</div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="logo">LB</div>
+            <div class="pager">2/5</div>
+        </div>
+    </div>
+</body>
+</html>

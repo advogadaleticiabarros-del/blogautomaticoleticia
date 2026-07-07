@@ -1,1 +1,160 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><style>*{margin:0;padding:0;box-sizing:border-box}body{width:1080px;height:1350px;font-family:'Playfair Display',serif;background:#1a1a1a;color:#F5F1EB;position:relative;overflow:hidden}.bg{position:absolute;width:100%;height:100%;object-fit:cover;top:0;left:0;z-index:1}.overlay{position:absolute;width:100%;height:100%;background:linear-gradient(to top, rgba(26,26,26,0.9) 0%, rgba(26,26,26,0.5) 50%, rgba(26,26,26,0.7) 100%);top:0;left:0;z-index:2}.content{position:absolute;width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding:100px 60px;z-index:3;text-align:center}.breadcrumb{font-family:'Inter',sans-serif;font-size:1.2rem;color:#C9A962;margin-bottom:40px;letter-spacing:1px;text-transform:uppercase}.title{font-size:4.5rem;font-weight:700;line-height:1.1;margin-bottom:25px;color:#F5F1EB}.subtitle{font-size:2rem;color:#C9A962;font-weight:400;margin-top:20px}.cta{font-family:'Inter',sans-serif;font-size:1.3rem;color:#A89968;margin-top:50px;opacity:0.9}</style></head><body><img src="capa.jpg" alt="Reversão" class="bg"><div class="overlay"></div><div class="content"><p class="breadcrumb">← Do carrossel anterior</p><h1 class="title">Me Arrependi<br>Posso Reverter?</h1><p class="subtitle">A resposta é SIM</p><p class="cta">Descubra como →</p></div></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posso reverter meu pedido de demissão? V2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #1a3a5c;
+            --color-accent: #c8a96e;
+            --color-cta: #25D366;
+            --color-dark: #1a1a2e;
+            --color-light: #ffffff;
+            --color-bg: #f8f6f0;
+            --color-muted: #6b7280;
+            --color-border: #e5e0d8;
+        }
+
+        body {
+            width: 1080px;
+            height: 1350px;
+            font-family: 'Inter', sans-serif;
+            background: var(--color-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(180deg, var(--color-bg) 0%, #f3ede0 100%);
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(135deg, var(--color-primary) 0%, #2a4f7c 100%);
+            z-index: 1;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 100px 40px 60px;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .kicker {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--color-accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--color-light);
+            line-height: 1.25;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--color-accent);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .subheading {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--color-muted);
+            line-height: 1.75;
+            margin-top: 30px;
+            max-width: 600px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            z-index: 10;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent);
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .pager {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--color-muted);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-content">
+            <div class="kicker">Reversibilidade</div>
+            <div class="headline">Posso reverter meu pedido?</div>
+            <div class="accent-line"></div>
+            <div class="subheading">Sim! Conheça como contestar seu pedido de demissão</div>
+        </div>
+        <div class="footer">
+            <div class="logo">LB</div>
+            <div class="pager">1/5</div>
+        </div>
+    </div>
+</body>
+</html>

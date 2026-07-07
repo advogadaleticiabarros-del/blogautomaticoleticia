@@ -1,1 +1,188 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><style>*{margin:0;padding:0;box-sizing:border-box}body{width:1080px;height:1350px;font-family:'Inter',sans-serif;background:#F5F1EB;color:#1a1a1a;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 60px;text-align:center;position:relative}.top-divider{position:absolute;top:80px;left:80px;right:80px;height:3px;background:linear-gradient(90deg, transparent, #C9A962, transparent)}.title{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:700;margin-bottom:60px;color:#1a1a1a;line-height:1.2;margin-top:40px}.law-number{font-size:5rem;font-weight:700;color:#C9A962;opacity:0.15;margin-bottom:-40px}.law-title{font-size:2.2rem;color:#C9A962;font-weight:700;margin-bottom:40px;font-family:'Playfair Display',serif}.law-description{font-size:1.6rem;color:#8B7355;line-height:1.9;max-width:850px;margin-bottom:50px}.highlight-box{background:rgba(201,169,98,0.06);border:1px solid #C9A962;padding:35px;border-radius:12px;margin:40px auto 0;max-width:800px}.emphasis{color:#1a1a1a;font-weight:700;font-size:1.8rem}</style></head><body><div class="top-divider"></div><h2 class="title">Lei e Direito</h2><p class="law-number">500</p><p class="law-title">Art. 500 CLT</p><p class="law-description">Qualquer pedido de demissão de gestante SÓ é válido com assistência sindical ou autoridade competente</p><div class="highlight-box"><p class="emphasis">Sem sindicato = Nulidade Automática</p></div></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLT 391 — Sua Proteção Legal V2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #1a3a5c;
+            --color-accent: #c8a96e;
+            --color-cta: #25D366;
+            --color-dark: #1a1a2e;
+            --color-light: #ffffff;
+            --color-bg: #f8f6f0;
+            --color-muted: #6b7280;
+            --color-border: #e5e0d8;
+        }
+
+        body {
+            width: 1080px;
+            height: 1350px;
+            font-family: 'Inter', sans-serif;
+            background: var(--color-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-bg) 0%, #f0ede5 100%);
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(200, 169, 110, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .slide::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -30%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(26, 58, 92, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 60px 40px;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(200, 169, 110, 0.2);
+            color: var(--color-primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--color-accent);
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1.3;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        .article-number {
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin: 20px 0;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 0 4px 8px rgba(200, 169, 110, 0.15);
+        }
+
+        .article-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--color-dark);
+            line-height: 1.75;
+            margin: 20px 0;
+            max-width: 700px;
+        }
+
+        .highlight {
+            background: rgba(200, 169, 110, 0.2);
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: var(--color-primary);
+            font-weight: 600;
+            border-left: 3px solid var(--color-accent);
+            padding-left: 10px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            z-index: 10;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent);
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .pager {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--color-muted);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-content">
+            <div class="badge">Lei de Proteção</div>
+            <div class="headline">A lei está do seu lado</div>
+            <div class="article-number">391</div>
+            <div class="article-text">A CLT garante que sua demissão só pode ser <span class="highlight">validada corretamente</span>, com <span class="highlight">ciência da gravidez</span> e <span class="highlight">formalização legal</span></div>
+        </div>
+        <div class="footer">
+            <div class="logo">LB</div>
+            <div class="pager">2/5</div>
+        </div>
+    </div>
+</body>
+</html>
